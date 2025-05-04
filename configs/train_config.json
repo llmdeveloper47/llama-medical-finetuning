@@ -1,0 +1,71 @@
+{
+  "model": {
+    "model_name": "meta-llama/Meta-Llama-3.1-8B",
+    "tokenizer_name": null,
+    "cache_dir": null,
+    "trust_remote_code": true,
+    "use_local_model": false,
+    "precision": "bf16"
+  },
+  "lora": {
+    "use_lora": true,
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "bias": "none",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "task_type": "CAUSAL_LM",
+    "lora_path": null
+  },
+  "data": {
+    "data_dir": "data/processed",
+    "train_file": "train.jsonl",
+    "validation_file": "validation.jsonl",
+    "test_file": "test.jsonl",
+    "max_seq_length": 4096,
+    "pad_to_max_length": false,
+    "per_device_train_batch_size": 2,
+    "per_device_eval_batch_size": 2,
+    "dataloader_num_workers": 4,
+    "prefetch_factor": 2
+  },
+  "train": {
+    "output_dir": "outputs/medical-llama-3.1-8B",
+    "logging_dir": "logs",
+    "learning_rate": 2e-4,
+    "weight_decay": 0.01,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-8,
+    "max_grad_norm": 1.0,
+    "num_train_epochs": 3,
+    "max_steps": -1,
+    "warmup_ratio": 0.1,
+    "lr_scheduler_type": "cosine",
+    "gradient_accumulation_steps": 4,
+    "logging_steps": 10,
+    "eval_steps": 200,
+    "save_steps": 500,
+    "save_total_limit": 3,
+    "local_rank": -1,
+    "deepspeed": "configs/deepspeed_config.json",
+    "resume_from_checkpoint": null,
+    "save_only_model": true,
+    "seed": 42,
+    "fp16": false,
+    "bf16": true,
+    "aws_region": "us-west-2",
+    "use_sagemaker": false,
+    "sagemaker_bucket": null,
+    "sagemaker_role": null,
+    "compute_additional_metrics": true
+  }
+}

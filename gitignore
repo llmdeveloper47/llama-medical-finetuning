@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data and models
+data/raw/
+data/processed/
+models/
+outputs/
+logs/
+wandb/
+
+# Model checkpoints and results
+*.pt
+*.bin
+*.pth
+*.safetensors
+*.ckpt
+
+# Environment files
+.env
+
+# SageMaker
+.sagemaker-*/
+sagemaker_train.py
+
+# DeepSpeed
+zero_to_fp32.py
+
+# Mac
+.DS_Store
